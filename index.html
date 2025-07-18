@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>$50 Roblox Gift Card Contest</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Win $50 Roblox Gift Card!</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -61,68 +61,76 @@
       padding: 10px;
       margin: 10px 0;
       border-radius: 8px;
+      display: none;
     }
 
-    .comment strong {
+    .comment.active {
       display: block;
-      margin-bottom: 5px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Win a $50 Roblox Gift Card!</h1>
-    <p>Join our quick contest for a chance to win a free $50 Roblox gift card. No purchase required!</p>
+    <p>Quick entry giveaway – Claim your chance to win $50 Roblox credits! No purchase required!</p>
     
-    <img src="https://upload.wikimedia.org/wikipedia/en/4/48/Roblox_Logo_2022.svg" alt="Roblox Gift Card">
-    
-    <form>
+    <img src="https://i.imgur.com/7Q7aO6e.png" alt="Roblox Gift Card" />
+
+    <form onsubmit="handleEntry(event)">
       <label for="age">Q1: Are you over 18 or younger?</label>
-      <select id="age" name="age">
+      <select id="age" name="age" required>
+        <option value="">-- Select your age --</option>
         <option value="under18">Under 18</option>
         <option value="18plus">18 or Older</option>
       </select>
 
       <label for="name">Q2: Your name</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name">
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
 
-      <button type="submit">Enter Contest</button>
+      <!-- Optional reCAPTCHA integration -->
+      <!-- <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY_HERE"></div> -->
+
+      <button type="submit">Enter to Win</button>
     </form>
 
     <div class="requirements">
       <h2>🎯 Entry Requirements:</h2>
       <ul>
-        <li>Only one entry per person</li>
-        <li>You must answer both questions honestly</li>
-        <li>Winners will be notified via email or direct message</li>
-        <li>Ensure you follow all contest rules</li>
+        <li>Submit honest answers</li>
+        <li>One entry per participant</li>
+        <li>Winners are picked randomly</li>
+        <li>Claim via the provided CPA link</li>
       </ul>
     </div>
 
     <div class="comments">
       <h2>🗨️ Real Comments from Social Media</h2>
-      
-      <div class="comment">
-        <strong>🌟 Sarah Johnson (Facebook):</strong>
-        Just entered! Hope I win, my brother would love this!
-      </div>
-      <div class="comment">
-        <strong>🔥 @GamerDude (Twitter):</strong>
-        Easy entry and looks legit. Fingers crossed! 🤞
-      </div>
-      <div class="comment">
-        <strong>💬 Alex M. (Facebook):</strong>
-        Got my gift card last month, thanks guys!
-      </div>
-      <div class="comment">
-        <strong>✨ @RobloxQueen (Twitter):</strong>
-        Finally a giveaway that doesn’t ask for 1000 steps 😂
-      </div>
-      <div class="comment">
-        <strong>👍 Marcus T. (Facebook):</strong>
-        Entered, shared, and hyped! GL everyone!
-      </div>
+      <div class="comment active"><strong>🌟 Sarah Johnson (Facebook):</strong> Just entered! My brother would love this!</div>
+      <div class="comment"><strong>🔥 @GamerDude (Twitter):</strong> Easy to join, hope I win 🤞</div>
+      <div class="comment"><strong>💬 Alex M. (Facebook):</strong> Got mine last week, 100% real!</div>
+      <div class="comment"><strong>✨ @RobloxQueen (Twitter):</strong> Love how simple this was 😂</div>
+      <div class="comment"><strong>👍 Marcus T. (Facebook):</strong> Entered, shared and hyped!</div>
     </div>
   </div>
+
+  <script>
+    function handleEntry(event) {
+      event.preventDefault();
+      window.location.href = "https://YOUR_CPA_LINK_HERE";
+    }
+
+    // Comment rotation logic
+    const comments = document.querySelectorAll('.comment');
+    let currentIndex = 0;
+
+    setInterval(() => {
+      comments[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % comments.length;
+      comments[currentIndex].classList.add('active');
+    }, 4000);
+  </script>
+
+  <!-- Uncomment below for reCAPTCHA (optional) -->
+  <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 </body>
 </html>
