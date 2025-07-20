@@ -1,127 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>$50 Roblox Gift Card Contest</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>$50 Roblox Gift Card Giveaway</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f9fc;
-      color: #222;
+    * {
       margin: 0;
       padding: 0;
-      text-align: center;
+      box-sizing: border-box;
     }
-
-    .container {
-      max-width: 500px;
-      margin: auto;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f7f8fc, #e2e6ef);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       padding: 20px;
     }
-
-    img {
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
       width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
+      padding: 30px;
+      transition: 0.3s ease-in-out;
     }
-
+    .card:hover {
+      transform: translateY(-5px);
+    }
     h1 {
-      color: #d92d2d;
+      text-align: center;
+      color: #22c55e;
+      font-size: 2rem;
+      margin-bottom: 15px;
     }
-
-    input, select, button {
+    p.description {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 1.05rem;
+      color: #555;
+    }
+    img.responsive {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    input[type="text"], select {
       width: 100%;
       padding: 12px;
-      margin: 10px 0;
-      font-size: 16px;
-      border-radius: 8px;
       border: 1px solid #ccc;
-    }
-
-    button {
-      background: #28a745;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #218838;
-    }
-
-    .requirements, .comments {
-      margin-top: 30px;
-      text-align: left;
-    }
-
-    .comment {
-      background: #fff;
-      border: 1px solid #ddd;
-      padding: 10px;
-      margin: 10px 0;
       border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 1rem;
     }
-
+    .btn {
+      width: 100%;
+      padding: 14px;
+      background: #22c55e;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #16a34a;
+    }
+    .requirements {
+      margin-top: 30px;
+      font-size: 0.95rem;
+      color: #444;
+    }
+    .requirements ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    .requirements ul li {
+      margin-bottom: 8px;
+    }
+    .comments {
+      margin-top: 35px;
+      background: #f0f4f8;
+      padding: 15px;
+      border-radius: 12px;
+    }
+    .comment {
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    .comment:last-child {
+      border-bottom: none;
+    }
     .comment strong {
-      display: block;
-      margin-bottom: 5px;
+      color: #3b82f6;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="card">
     <h1>Win a $50 Roblox Gift Card!</h1>
-    <p>Join our quick contest for a chance to win a free $50 Roblox gift card. No purchase required!</p>
-    
-    <img src="https://upload.wikimedia.org/wikipedia/en/4/48/Roblox_Logo_2022.svg" alt="Roblox Gift Card">
-    
-    <form>
-      <label for="age">Q1: Are you over 18 or younger?</label>
-      <select id="age" name="age">
-        <option value="under18">Under 18</option>
-        <option value="18plus">18 or Older</option>
+    <p class="description">Enter now for your chance to win a $50 gift card to use on Roblox. Perfect for Robux, outfits, and more!</p>
+    <img src="https://cdn.pixabay.com/photo/2021/10/19/15/10/roblox-6723486_1280.png" alt="Roblox Gift Card" class="responsive" />
+
+    <form action="https://your-link-here.com" method="GET">
+      <label for="age">How old are you?</label>
+      <select id="age" name="age" required>
+        <option value="">Choose an option</option>
+        <option value="under13">Under 13</option>
+        <option value="13to18">13 to 18</option>
+        <option value="over18">Over 18</option>
       </select>
 
-      <label for="name">Q2: Your name</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name">
+      <label for="username">Roblox Username:</label>
+      <input type="text" id="username" name="username" placeholder="Enter your Roblox username" required />
 
-      <button type="submit">Enter Contest</button>
+      <button type="submit" class="btn">Enter Giveaway</button>
     </form>
 
     <div class="requirements">
-      <h2>🎯 Entry Requirements:</h2>
+      <h3>Entry Requirements:</h3>
       <ul>
+        <li>Must have a valid Roblox account</li>
         <li>Only one entry per person</li>
-        <li>You must answer both questions honestly</li>
-        <li>Winners will be notified via email or direct message</li>
-        <li>Ensure you follow all contest rules</li>
+        <li>No purchase necessary</li>
+        <li>Winners will be contacted via Roblox messages</li>
       </ul>
     </div>
 
     <div class="comments">
-      <h2>🗨️ Real Comments from Social Media</h2>
-      
-      <div class="comment">
-        <strong>🌟 Sarah Johnson (Facebook):</strong>
-        Just entered! Hope I win, my brother would love this!
-      </div>
-      <div class="comment">
-        <strong>🔥 @GamerDude (Twitter):</strong>
-        Easy entry and looks legit. Fingers crossed! 🤞
-      </div>
-      <div class="comment">
-        <strong>💬 Alex M. (Facebook):</strong>
-        Got my gift card last month, thanks guys!
-      </div>
-      <div class="comment">
-        <strong>✨ @RobloxQueen (Twitter):</strong>
-        Finally a giveaway that doesn’t ask for 1000 steps 😂
-      </div>
-      <div class="comment">
-        <strong>👍 Marcus T. (Facebook):</strong>
-        Entered, shared, and hyped! GL everyone!
-      </div>
+      <h3>User Comments:</h3>
+      <div class="comment"><strong>@RobloxFan123:</strong> I just got my $50 card—thank you!! 🔥</div>
+      <div class="comment"><strong>EmilyGamer (YouTube):</strong> Entered yesterday and can't wait to see if I win 😍</div>
+      <div class="comment"><strong>@EpicBuilder21:</strong> Spent it all on new outfits! Super easy to join 💯</div>
+      <div class="comment"><strong>Leo_TheLegend:</strong> My little brother and I both joined. Fingers crossed 🤞</div>
     </div>
   </div>
 </body>
